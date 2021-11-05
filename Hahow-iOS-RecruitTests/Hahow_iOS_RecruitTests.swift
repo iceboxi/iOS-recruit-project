@@ -9,18 +9,26 @@ import XCTest
 @testable import Hahow_iOS_Recruit
 
 class Hahow_iOS_RecruitTests: XCTestCase {
-
+    var mock: HahowSessionMock!
+    var manager: NetworkManager!
+    
     override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+        mock = HahowSessionMock()
+        manager = NetworkManager(session: mock)
     }
 
     override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+        mock = nil
+        manager = nil
     }
 
     func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+        let mock = HahowSessionMock()
+        let manager = NetworkManager(session: mock)
+        manager.loadData(from: URL(string: "mock")!) { model in
+            XCTAssertEqual(model?.data.count, 4)
+            XCTAssertEqual(model?.data.first?.category, "programming")
+        }
     }
 
     func testPerformanceExample() throws {

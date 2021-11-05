@@ -1,0 +1,16 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "IITool",
+        "repositoryURL": "https://github.com/iceboxi/IITool.git",
+        "state": {
+          "branch": null,
+          "revision": "ddd66e6fce9cd5755f74d723b1e86fbcd5fe0be7",
+          "version": "1.0.0"
+        }
+      }
+    ]
+  },
+  "version": 1
+}
