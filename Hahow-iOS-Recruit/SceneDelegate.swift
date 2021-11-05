@@ -16,7 +16,12 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
-        guard let _ = (scene as? UIWindowScene) else { return }
+        if let userActivity = connectionOptions.userActivities.first ?? session.stateRestorationActivity {
+            if !configure(window: window, with: userActivity) {
+                Swift.debugPrint("Failed to restore from \(userActivity)")
+            }
+        }
+        // The `window` property will automatically be loaded with the storyboard's initial view controller.
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
@@ -47,6 +52,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // to restore the scene back to its current state.
     }
 
-
+    func configure(window: UIWindow?, with activity: NSUserActivity) -> Bool {
+        var configured = false
+        return configured
+    }
 }
 
