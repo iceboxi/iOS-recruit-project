@@ -23,11 +23,18 @@ class Hahow_iOS_RecruitTests: XCTestCase {
     }
 
     func testExample() throws {
-        let mock = HahowSessionMock()
-        let manager = NetworkManager(session: mock)
-        manager.loadData(from: URL(string: "mock")!) { model in
+        manager.loadData(with: URL(string: "mock")!) { model in
             XCTAssertEqual(model?.data.count, 4)
             XCTAssertEqual(model?.data.first?.category, "programming")
+        }
+    }
+    
+    func testViewModel() throws {
+        let vm = ViewModel()
+        vm.callMockAPI {
+            XCTAssertEqual(vm.numberOfSection(), 4)
+            let course = vm.getCourse(IndexPath(item: 0, section: 0))
+            XCTAssertEqual(course.category, "programming")
         }
     }
 
