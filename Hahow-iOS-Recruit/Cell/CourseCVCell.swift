@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 class CourseCVCell: UICollectionViewCell {
     @IBOutlet weak var imageView: UIImageView!
@@ -19,6 +20,6 @@ class CourseCVCell: UICollectionViewCell {
 
     override func prepareForReuse() {
         super.prepareForReuse()
-        imageView.image = nil
+        imageView.sd_cancelCurrentImageLoad()
     }
 }

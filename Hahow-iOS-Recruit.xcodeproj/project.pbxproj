@@ -15,7 +15,7 @@
 		58E88F8E27352F6C001707BE /* CourseHorizontalCVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 58E88F8D27352F6C001707BE /* CourseHorizontalCVCell.xib */; };
 		58E88F9127355742001707BE /* CourseHeaderCRView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58E88F8F27355742001707BE /* CourseHeaderCRView.swift */; };
 		58E88F9227355742001707BE /* CourseHeaderCRView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 58E88F9027355742001707BE /* CourseHeaderCRView.xib */; };
-		58E88F9627356422001707BE /* UIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58E88F9527356422001707BE /* UIImageExtension.swift */; };
+		58E88F992737723F001707BE /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 58E88F982737723F001707BE /* SDWebImage */; };
 		65E9E1E7270C301A00DDEADC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65E9E1E6270C301A00DDEADC /* AppDelegate.swift */; };
 		65E9E1E9270C301A00DDEADC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65E9E1E8270C301A00DDEADC /* SceneDelegate.swift */; };
 		65E9E1EB270C301A00DDEADC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65E9E1EA270C301A00DDEADC /* ViewController.swift */; };
@@ -52,7 +52,6 @@
 		58E88F8D27352F6C001707BE /* CourseHorizontalCVCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CourseHorizontalCVCell.xib; sourceTree = "<group>"; };
 		58E88F8F27355742001707BE /* CourseHeaderCRView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseHeaderCRView.swift; sourceTree = "<group>"; };
 		58E88F9027355742001707BE /* CourseHeaderCRView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CourseHeaderCRView.xib; sourceTree = "<group>"; };
-		58E88F9527356422001707BE /* UIImageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageExtension.swift; sourceTree = "<group>"; };
 		65E9E1E3270C301A00DDEADC /* Hahow-iOS-Recruit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Hahow-iOS-Recruit.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		65E9E1E6270C301A00DDEADC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		65E9E1E8270C301A00DDEADC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -75,6 +74,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				58E88F992737723F001707BE /* SDWebImage in Frameworks */,
 				58E88F88273503A1001707BE /* IITool in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -117,14 +117,6 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
-		58E88F94273563FB001707BE /* Utility */ = {
-			isa = PBXGroup;
-			children = (
-				58E88F9527356422001707BE /* UIImageExtension.swift */,
-			);
-			path = Utility;
-			sourceTree = "<group>";
-		};
 		65E9E1DA270C301A00DDEADC = {
 			isa = PBXGroup;
 			children = (
@@ -152,7 +144,6 @@
 				65E9E1E6270C301A00DDEADC /* AppDelegate.swift */,
 				65E9E1E8270C301A00DDEADC /* SceneDelegate.swift */,
 				65E9E1EA270C301A00DDEADC /* ViewController.swift */,
-				58E88F94273563FB001707BE /* Utility */,
 				58E88F93273563E9001707BE /* Cell */,
 				58E88F81273422E3001707BE /* Model */,
 				65E9E1EC270C301A00DDEADC /* Main.storyboard */,
@@ -199,6 +190,7 @@
 			name = "Hahow-iOS-Recruit";
 			packageProductDependencies = (
 				58E88F87273503A1001707BE /* IITool */,
+				58E88F982737723F001707BE /* SDWebImage */,
 			);
 			productName = "Hahow-iOS-Recruit";
 			productReference = 65E9E1E3270C301A00DDEADC /* Hahow-iOS-Recruit.app */;
@@ -273,6 +265,7 @@
 			mainGroup = 65E9E1DA270C301A00DDEADC;
 			packageReferences = (
 				58E88F86273503A1001707BE /* XCRemoteSwiftPackageReference "IITool" */,
+				58E88F972737723F001707BE /* XCRemoteSwiftPackageReference "SDWebImage" */,
 			);
 			productRefGroup = 65E9E1E4270C301A00DDEADC /* Products */;
 			projectDirPath = "";
@@ -326,7 +319,6 @@
 				65E9E1E7270C301A00DDEADC /* AppDelegate.swift in Sources */,
 				58E88F832734CDB7001707BE /* NetworkManager.swift in Sources */,
 				58E88F80273422DE001707BE /* Model.swift in Sources */,
-				58E88F9627356422001707BE /* UIImageExtension.swift in Sources */,
 				58E88F9127355742001707BE /* CourseHeaderCRView.swift in Sources */,
 				65E9E1E9270C301A00DDEADC /* SceneDelegate.swift in Sources */,
 			);
@@ -685,6 +677,14 @@
 				minimumVersion = 1.0.0;
 			};
 		};
+		58E88F972737723F001707BE /* XCRemoteSwiftPackageReference "SDWebImage" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImage.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -692,6 +692,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 58E88F86273503A1001707BE /* XCRemoteSwiftPackageReference "IITool" */;
 			productName = IITool;
+		};
+		58E88F982737723F001707BE /* SDWebImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 58E88F972737723F001707BE /* XCRemoteSwiftPackageReference "SDWebImage" */;
+			productName = SDWebImage;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

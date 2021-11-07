@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 class ViewController: UIViewController {
     @IBOutlet weak private var collectionView: UICollectionView!
@@ -90,7 +91,7 @@ extension ViewController: UICollectionViewDataSource {
         let model = items[indexPath.section].courses[indexPath.row]
         cell.titleLabel.text = model.title
         cell.deatilLabel.text = model.name
-        cell.imageView.imageFromServerURL(model.coverImageUrl, placeHolder: nil)
+        cell.imageView.sd_setImage(with: URL(string: model.coverImageUrl), completed: nil)
         return cell
     }
     
