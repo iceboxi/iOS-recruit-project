@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		58E88F80273422DE001707BE /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58E88F7F273422DE001707BE /* Model.swift */; };
 		58E88F832734CDB7001707BE /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58E88F822734CDB6001707BE /* NetworkManager.swift */; };
+		58E88F852734D61B001707BE /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58E88F842734D61B001707BE /* ViewModel.swift */; };
 		58E88F88273503A1001707BE /* IITool in Frameworks */ = {isa = PBXBuildFile; productRef = 58E88F87273503A1001707BE /* IITool */; };
 		58E88F8B273516C7001707BE /* CourseCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58E88F89273516C7001707BE /* CourseCVCell.swift */; };
 		58E88F8C273516C7001707BE /* CourseVerticalCVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 58E88F8A273516C7001707BE /* CourseVerticalCVCell.xib */; };
@@ -16,6 +17,7 @@
 		58E88F9127355742001707BE /* CourseHeaderCRView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58E88F8F27355742001707BE /* CourseHeaderCRView.swift */; };
 		58E88F9227355742001707BE /* CourseHeaderCRView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 58E88F9027355742001707BE /* CourseHeaderCRView.xib */; };
 		58E88F992737723F001707BE /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 58E88F982737723F001707BE /* SDWebImage */; };
+		58E88F9C27378DDB001707BE /* UICollectionViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58E88F9B27378DDB001707BE /* UICollectionViewExtension.swift */; };
 		65E9E1E7270C301A00DDEADC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65E9E1E6270C301A00DDEADC /* AppDelegate.swift */; };
 		65E9E1E9270C301A00DDEADC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65E9E1E8270C301A00DDEADC /* SceneDelegate.swift */; };
 		65E9E1EB270C301A00DDEADC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65E9E1EA270C301A00DDEADC /* ViewController.swift */; };
@@ -47,11 +49,13 @@
 /* Begin PBXFileReference section */
 		58E88F7F273422DE001707BE /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		58E88F822734CDB6001707BE /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		58E88F842734D61B001707BE /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		58E88F89273516C7001707BE /* CourseCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseCVCell.swift; sourceTree = "<group>"; };
 		58E88F8A273516C7001707BE /* CourseVerticalCVCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CourseVerticalCVCell.xib; sourceTree = "<group>"; };
 		58E88F8D27352F6C001707BE /* CourseHorizontalCVCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CourseHorizontalCVCell.xib; sourceTree = "<group>"; };
 		58E88F8F27355742001707BE /* CourseHeaderCRView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseHeaderCRView.swift; sourceTree = "<group>"; };
 		58E88F9027355742001707BE /* CourseHeaderCRView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CourseHeaderCRView.xib; sourceTree = "<group>"; };
+		58E88F9B27378DDB001707BE /* UICollectionViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICollectionViewExtension.swift; sourceTree = "<group>"; };
 		65E9E1E3270C301A00DDEADC /* Hahow-iOS-Recruit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Hahow-iOS-Recruit.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		65E9E1E6270C301A00DDEADC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		65E9E1E8270C301A00DDEADC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -117,6 +121,14 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
+		58E88F9A27378D94001707BE /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				58E88F9B27378DDB001707BE /* UICollectionViewExtension.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
 		65E9E1DA270C301A00DDEADC = {
 			isa = PBXGroup;
 			children = (
@@ -144,6 +156,8 @@
 				65E9E1E6270C301A00DDEADC /* AppDelegate.swift */,
 				65E9E1E8270C301A00DDEADC /* SceneDelegate.swift */,
 				65E9E1EA270C301A00DDEADC /* ViewController.swift */,
+				58E88F842734D61B001707BE /* ViewModel.swift */,
+				58E88F9A27378D94001707BE /* Extension */,
 				58E88F93273563E9001707BE /* Cell */,
 				58E88F81273422E3001707BE /* Model */,
 				65E9E1EC270C301A00DDEADC /* Main.storyboard */,
@@ -318,8 +332,10 @@
 				65E9E1EB270C301A00DDEADC /* ViewController.swift in Sources */,
 				65E9E1E7270C301A00DDEADC /* AppDelegate.swift in Sources */,
 				58E88F832734CDB7001707BE /* NetworkManager.swift in Sources */,
+				58E88F9C27378DDB001707BE /* UICollectionViewExtension.swift in Sources */,
 				58E88F80273422DE001707BE /* Model.swift in Sources */,
 				58E88F9127355742001707BE /* CourseHeaderCRView.swift in Sources */,
+				58E88F852734D61B001707BE /* ViewModel.swift in Sources */,
 				65E9E1E9270C301A00DDEADC /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

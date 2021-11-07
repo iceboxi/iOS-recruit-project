@@ -9,33 +9,30 @@ import UIKit
 import SDWebImage
 
 class ViewController: UIViewController {
-    @IBOutlet weak private var collectionView: UICollectionView!
-    private var items: [Classmute] = []
-    
-    private let itemsPerRow: CGFloat = 2
-    private let spacing: CGFloat = 20
+    @IBOutlet weak private var collectionView: UICollectionView! {
+        didSet {
+            setupCollectionView()
+        }
+    }
+    private let viewModel: ViewModel = ViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
         
-        collectionView.delegate = self
+        viewModel.callMockAPI { [weak self] in
+            DispatchQueue.main.async {
+                self?.collectionView.reloadData()
+            }
+        }
+    }
+    
+    private func setupCollectionView() {
         collectionView.dataSource = self
         collectionView.collectionViewLayout = generateLayout()
         
-        collectionView.register(UINib(nibName: "CourseHeaderCRView", bundle: nil), forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "CourseHeaderCRView")
-        collectionView.register(UINib(nibName: "CourseVerticalCVCell", bundle: nil), forCellWithReuseIdentifier: "CourseVerticalCVCell")
-        collectionView.register(UINib(nibName: "CourseHorizontalCVCell", bundle: nil), forCellWithReuseIdentifier: "CourseHorizontalCVCell")
-        
-        let mock = HahowSessionMock()
-        let manager = NetworkManager(session: mock)
-        manager.loadData(from: URL(string: "mock")!) { [weak self] result in
-            guard let result = result else {
-                return
-            }
-            
-            self?.items = result.data
-        }
+        collectionView.registerSectionHeaderFromNib(type: CourseHeaderCRView.self)
+        collectionView.register(CourseCVCell.getNib(.vertical), forCellWithReuseIdentifier: CourseCVCell.Identifier.vertical.rawValue)
+        collectionView.register(CourseCVCell.getNib(.horizontal), forCellWithReuseIdentifier: CourseCVCell.Identifier.horizontal.rawValue)
     }
     
     override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
@@ -60,45 +57,33 @@ class ViewController: UIViewController {
     }
 }
 
-// MARK: - UICollectionViewDelegate
-extension ViewController: UICollectionViewDelegate {
-    
-}
-
 // MARK: - UICollectionViewDataSource
 extension ViewController: UICollectionViewDataSource {
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return items.count
+        return viewModel.numberOfSection()
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        var max = 3
-        if showPadStyle {
-            max = 4
-        }
-        return items[section].courses.count > max ? max : items[section].courses.count
+        return viewModel.numberOfRow(section, style: showPadStyle)
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         var cell: CourseCVCell!
         if indexPath.row == 0 && !showPadStyle {
-            cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CourseVerticalCVCell", for: indexPath) as? CourseCVCell
+            cell = collectionView.dequeueReusableCell(withReuseIdentifier: CourseCVCell.Identifier.vertical.rawValue, for: indexPath) as? CourseCVCell
         } else {
-            cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CourseHorizontalCVCell", for: indexPath) as? CourseCVCell
+            cell = collectionView.dequeueReusableCell(withReuseIdentifier: CourseCVCell.Identifier.horizontal.rawValue, for: indexPath) as? CourseCVCell
         }
         
-        let model = items[indexPath.section].courses[indexPath.row]
-        cell.titleLabel.text = model.title
-        cell.deatilLabel.text = model.name
-        cell.imageView.sd_setImage(with: URL(string: model.coverImageUrl), completed: nil)
+        let course = viewModel.getCourse(indexPath)
+        cell.config(with: course)
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-        let view = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "CourseHeaderCRView", for: indexPath) as! CourseHeaderCRView
-        let model = items[indexPath.section]
-        view.titleLabel.text = model.category
+        let view = collectionView.dequeueReusableSectionHeader(with: CourseHeaderCRView.self, for: indexPath)
+        view.titleLabel.text = viewModel.getSectionTitle(indexPath.section)
         return view
     }
 }

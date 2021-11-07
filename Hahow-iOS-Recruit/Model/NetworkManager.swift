@@ -29,7 +29,7 @@ class NetworkManager {
         self.session = session
     }
 
-    func loadData(from url: URL, complete: @escaping (Hahow?) -> Void) {
+    func loadData(with url: URL, complete: @escaping (Hahow?) -> Void) {
         session.loadData(with: url) { data, _ in
             guard let data = data else {
                 complete(nil)
