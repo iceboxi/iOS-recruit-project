@@ -10,7 +10,6 @@
 		58E88F80273422DE001707BE /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58E88F7F273422DE001707BE /* Model.swift */; };
 		58E88F832734CDB7001707BE /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58E88F822734CDB6001707BE /* NetworkManager.swift */; };
 		58E88F852734D61B001707BE /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58E88F842734D61B001707BE /* ViewModel.swift */; };
-		58E88F88273503A1001707BE /* IITool in Frameworks */ = {isa = PBXBuildFile; productRef = 58E88F87273503A1001707BE /* IITool */; };
 		58E88F8B273516C7001707BE /* CourseCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58E88F89273516C7001707BE /* CourseCVCell.swift */; };
 		58E88F8C273516C7001707BE /* CourseVerticalCVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 58E88F8A273516C7001707BE /* CourseVerticalCVCell.xib */; };
 		58E88F8E27352F6C001707BE /* CourseHorizontalCVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 58E88F8D27352F6C001707BE /* CourseHorizontalCVCell.xib */; };
@@ -79,7 +78,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				58E88F992737723F001707BE /* SDWebImage in Frameworks */,
-				58E88F88273503A1001707BE /* IITool in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -203,7 +201,6 @@
 			);
 			name = "Hahow-iOS-Recruit";
 			packageProductDependencies = (
-				58E88F87273503A1001707BE /* IITool */,
 				58E88F982737723F001707BE /* SDWebImage */,
 			);
 			productName = "Hahow-iOS-Recruit";
@@ -278,7 +275,6 @@
 			);
 			mainGroup = 65E9E1DA270C301A00DDEADC;
 			packageReferences = (
-				58E88F86273503A1001707BE /* XCRemoteSwiftPackageReference "IITool" */,
 				58E88F972737723F001707BE /* XCRemoteSwiftPackageReference "SDWebImage" */,
 			);
 			productRefGroup = 65E9E1E4270C301A00DDEADC /* Products */;
@@ -685,14 +681,6 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		58E88F86273503A1001707BE /* XCRemoteSwiftPackageReference "IITool" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/iceboxi/IITool.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 1.0.0;
-			};
-		};
 		58E88F972737723F001707BE /* XCRemoteSwiftPackageReference "SDWebImage" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SDWebImage/SDWebImage.git";
@@ -704,11 +692,6 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		58E88F87273503A1001707BE /* IITool */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 58E88F86273503A1001707BE /* XCRemoteSwiftPackageReference "IITool" */;
-			productName = IITool;
-		};
 		58E88F982737723F001707BE /* SDWebImage */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 58E88F972737723F001707BE /* XCRemoteSwiftPackageReference "SDWebImage" */;
