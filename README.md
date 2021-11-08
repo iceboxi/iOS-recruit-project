@@ -11,3 +11,6 @@
 ## Test
 1. session mock 使用 local data 進行 model 相關測試
 2. 可對 view model 進行驗證
+
+## Third Party
+1. SDWebImage: 用來做列表圖片下載，有 cache 機制
